@@ -193,6 +193,67 @@ BoundingBox::BoundingBox(const Triangle &iTri, const Polygon &iPoly)
     bottomRight.y = smallestY;
 }
 
+BoundingBox::BoundingBox(glm::vec4 a, glm::vec4 b, glm::vec4 c)
+{
+    std::vector<glm::vec4> posArray;
+    posArray.push_back(a);
+    posArray.push_back(b);
+    posArray.push_back(c);
+
+    // Find the bounding x, y values.
+    // Init the x, y valuse.
+    float biggestX, biggestY, smallestX, smallestY;
+    std::vector<glm::vec4>::iterator ptr = posArray.begin();
+    biggestX = ptr->x;
+    smallestX = ptr->x;
+    biggestY = ptr->y;
+    smallestY = ptr->y;
+
+    for(;ptr != posArray.end(); ptr++)
+    {
+        // Init.
+        float currentX = ptr->x;
+        float currentY = ptr->y;
+
+        // For biggest X.
+        if (currentX > biggestX)
+        {
+            biggestX = currentX;
+        }
+
+        // For smallest X.
+        if (currentX < smallestX)
+        {
+            smallestX = currentX;
+        }
+
+        // For biggest Y.
+        if (currentY > biggestY)
+        {
+            biggestY = currentY;
+        }
+
+        // For smallest Y.
+        if(currentY < smallestY)
+        {
+            smallestY = currentY;
+        }
+    }
+
+    // Using the bounding x, y values to construct the bounding points.
+    upperLeft.x = smallestX;
+    upperLeft.y = biggestY;
+
+    bottomLeft.x = smallestX;
+    bottomLeft.y = smallestY;
+
+    upperRight.x = biggestX;
+    upperRight.y = biggestY;
+
+    bottomRight.x = biggestX;
+    bottomRight.y = smallestY;
+}
+
 float BoundingBox::GetBiggestX()
 {
     return upperRight.x;

@@ -78,6 +78,7 @@ public:
 class BoundingBox{
 public:
     BoundingBox(const Triangle &iTri, const Polygon &iPoly);
+    BoundingBox(glm::vec4 a, glm::vec4 b, glm::vec4 c);
     ~BoundingBox();
 
     float GetSmallestY();

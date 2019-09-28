@@ -44,7 +44,6 @@ Line::Line(glm::vec2 iEndPoint1, glm::vec2 iEndPoint2)
 
 bool Line::YValueAndLineIntersection(float iYValue, float *x)
 {
-    //std::cout << "State:" << state << std::endl;
     // Check the State.
     if (state == 0)
     {
@@ -101,13 +100,6 @@ bool Line::YValueAndLineIntersection(float iYValue, float *x)
         {
             // Get the intersected x value.
             *x = ((iYValue - endPoint1[1]) / slope) + endPoint1[0];
-            //std::cout << "slope:" << slope << std::endl;
-            //std::cout << "x:" << *x << std::endl;
-            //std::cout << "endPoint1[0]:" << endPoint1[0] << std::endl;
-            //std::cout << "endPoint1[1]:" << endPoint1[1] << std::endl;
-            //std::cout << "endPoint2[0]:" << endPoint2[0] << std::endl;
-            //std::cout << "endPoint2[1]:" << endPoint2[1] << std::endl;
-            //std::cout << std::endl;
             return true;
         }
         else

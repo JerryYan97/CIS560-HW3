@@ -16,12 +16,14 @@ SOURCES += main.cpp\
     polygon.cpp \
     rasterizer.cpp \
     tiny_obj_loader.cc \
-    line.cpp
+    line.cpp \
+    camera.cpp
 
 HEADERS  += mainwindow.h \
     polygon.h \
     rasterizer.h \
     tiny_obj_loader.h \
-    line.h
+    line.h \
+    camera.h
 
 FORMS    += mainwindow.ui

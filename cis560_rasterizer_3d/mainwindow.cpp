@@ -23,6 +23,18 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
     //The key shortcuts for the other menu commands were set in Qt's GUI
     //editor. This one was implemented as a key press event for illustration purposes.
     case Qt::Key_Escape : on_actionQuit_Esc_triggered();  break;
+    case Qt::Key_W : on_action_w_triggered(); break;
+    case Qt::Key_S : on_action_s_triggered(); break;
+    case Qt::Key_A : on_action_a_triggered(); break;
+    case Qt::Key_D : on_action_d_triggered(); break;
+    case Qt::Key_Q : on_action_q_triggered(); break;
+    case Qt::Key_E : on_action_e_triggered(); break;
+    case Qt::Key_Z : on_action_z_triggered(); break;
+    case Qt::Key_X : on_action_x_triggered(); break;
+    case Qt::Key_Up : on_action_UpArrow_triggered(); break;
+    case Qt::Key_Down : on_action_DownArrow_triggered(); break;
+    case Qt::Key_Left : on_action_LeftArrow_triggered(); break;
+    case Qt::Key_Right : on_action_RightArrow_triggered(); break;
     }
 
     rendered_image = rasterizer.RenderScene();
@@ -245,4 +257,64 @@ void MainWindow::on_actionEquilateral_Triangle_triggered()
 void MainWindow::on_actionQuit_Esc_triggered()
 {
     QApplication::exit();
+}
+
+void MainWindow::on_action_w_triggered()
+{
+    rasterizer.m_Camera.moveForwardAndBack(0.5f);
+}
+
+void MainWindow::on_action_s_triggered()
+{
+    rasterizer.m_Camera.moveForwardAndBack(-0.5f);
+}
+
+void MainWindow::on_action_a_triggered()
+{
+    rasterizer.m_Camera.moveLeftAndRight(-0.5f);
+}
+
+void MainWindow::on_action_d_triggered()
+{
+    rasterizer.m_Camera.moveLeftAndRight(0.5f);
+}
+
+void MainWindow::on_action_q_triggered()
+{
+    rasterizer.m_Camera.moveUpAndDown(-0.5f);
+}
+
+void MainWindow::on_action_e_triggered()
+{
+    rasterizer.m_Camera.moveUpAndDown(0.5f);
+}
+
+void MainWindow::on_action_UpArrow_triggered()
+{
+    rasterizer.m_Camera.rotateAroundXAxis(-5.f);
+}
+
+void MainWindow::on_action_DownArrow_triggered()
+{
+    rasterizer.m_Camera.rotateAroundXAxis(5.f);
+}
+
+void MainWindow::on_action_LeftArrow_triggered()
+{
+    rasterizer.m_Camera.rotateAroundYAxis(5.f);
+}
+
+void MainWindow::on_action_RightArrow_triggered()
+{
+    rasterizer.m_Camera.rotateAroundYAxis(-5.f);
+}
+
+void MainWindow::on_action_z_triggered()
+{
+    rasterizer.m_Camera.rotateAroundZAxis(5.f);
+}
+
+void MainWindow::on_action_x_triggered()
+{
+    rasterizer.m_Camera.rotateAroundZAxis(-5.f);
 }

@@ -32,6 +32,29 @@ private slots:
 
     void on_actionQuit_Esc_triggered();
 
+    void on_action_w_triggered();
+
+    void on_action_s_triggered();
+
+    void on_action_a_triggered();
+
+    void on_action_d_triggered();
+
+    void on_action_q_triggered();
+
+    void on_action_e_triggered();
+
+    void on_action_UpArrow_triggered();
+
+    void on_action_DownArrow_triggered();
+
+    void on_action_LeftArrow_triggered();
+
+    void on_action_RightArrow_triggered();
+
+    void on_action_z_triggered();
+
+    void on_action_x_triggered();
 private:
     Ui::MainWindow *ui;
     Polygon LoadOBJ(const QString &file, const QString &polyName);

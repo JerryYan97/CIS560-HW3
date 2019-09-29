@@ -17,12 +17,14 @@ public:
     void rotateAroundXAxis(float radian);
     void rotateAroundYAxis(float radian);
     void rotateAroundZAxis(float radian);
-private:
-    void UpdateWorldDirection();
-    // Here are the camera direction axis in the world space.
+
     glm::vec4 forwardDir; // The camera's "forward" direction, i.e. its Z axis. Default value of <0, 0, -1, 0>.
     glm::vec4 rightDir; // The camera's "right" direction, i.e. its X axis. Default value of <1, 0, 0, 0>.
     glm::vec4 upDir; // The camera's "up" direction, i.e. its Y axis. Default value of <0, 1, 0, 0>.
+private:
+    void UpdateWorldDirection();
+    // Here are the camera direction axis in the world space.
+
 
     // Here are the radians rotated the local-axis of the camera.
     // The sequence is suppoed to be x-y-z.

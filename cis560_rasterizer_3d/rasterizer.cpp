@@ -213,7 +213,7 @@ glm::vec4 PerspectiveNormal(glm::vec3 rightarray, glm::vec3 iv1, glm::vec3 iv2, 
     return glm::vec4(n1, n2, n3, n4);
 }
 
-glm::vec3 Berycentric(glm::vec3 iv1, glm::vec3 iv2, glm::vec3 iv3, glm::vec3 iPos)
+glm::vec3 BerycentricArray(glm::vec3 iv1, glm::vec3 iv2, glm::vec3 iv3, glm::vec3 iPos)
 {
     glm::vec3 p1(iv1.x, iv1.y, 0.f);
     glm::vec3 p2(iv2.x, iv2.y, 0.f);
